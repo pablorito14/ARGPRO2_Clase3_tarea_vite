@@ -8,9 +8,9 @@ import { Button, Drawer, DrawerBody, DrawerOverlay, DrawerContent,
 const NavLinks = () => {
   return (
     <>
-      <Link href='/' variant='navLinks'> Inicio</Link>
-      <Link href='/' variant='navLinks'> Productos</Link>
-      <Link href='/' variant='navLinks'> Contacto</Link>
+      <Link variant='navLinks'> Inicio</Link>
+      <Link variant='navLinks'> Productos</Link>
+      <Link variant='navLinks'> Contacto</Link>
     </>
   )
 }
@@ -25,10 +25,10 @@ const Header = () => {
       <Box as='header' color='#ffffff' bg='#212529'>
         <Container py='.5rem'>
           <Heading py={1.5} fontWeight='500' >
-            <Link href='/' fontSize={{base: '1.75rem',md:'2rem'}} variant='logo'> RitoStore</Link>
+            <Link fontSize={{base: '1.75rem',md:'2rem'}} variant='logo'> RitoStore</Link>
           </Heading>
           <Box order={{md:1}} display='flex' gap='1.5rem' alignItems='center'>
-            <Link href='/' variant='navLinks' ms={2} >
+            <Link variant='navLinks' ms={2} >
               <FontAwesomeIcon icon={faCartShopping} size='lg' /> 
             </Link>
             

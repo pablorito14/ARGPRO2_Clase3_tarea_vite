@@ -4,5 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/ARGPRO2_Clase3_tarea_vite/'
+  base: '/ARGPRO2_Clase3_tarea_vite/',
+  build: {
+    chunkSizeWarningLimit: 800,
+  },
 })
