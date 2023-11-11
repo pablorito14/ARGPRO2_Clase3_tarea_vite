@@ -37,7 +37,7 @@ const Header = () => {
               <FontAwesomeIcon icon={faBars} size='2xl' />
             </Button>
           </Box>
-          <Box as='nav' order={{md:0}} w="100%" display={{base:'none',md:'flex'}} justifyContent="end" px={4} gap={4}>
+          <Box as='nav' order={{md:0}} w="full" display={{base:'none',md:'flex'}} justifyContent="end" px={4} gap={4}>
             <NavLinks />
           </Box>
         </Container>
