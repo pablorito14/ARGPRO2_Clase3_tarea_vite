@@ -28,8 +28,8 @@ const Main = () => {
     }  
   ]
   
-  const producto = productos[0]; // mensaje de ultimas unidades
-  // const producto = productos[1]; // stock no disponible (boton deshabilitado, precio en color mas oscuro)
+  // const producto = productos[0]; // mensaje de ultimas unidades
+  const producto = productos[0]; // stock no disponible (boton deshabilitado, precio en color mas oscuro)
   const { nombre,descripcion,precio, sku, stock, img } = producto;
 
   return (
@@ -39,7 +39,7 @@ const Main = () => {
           display='flex' alignItems='center' flexDirection='column' 
           minH={{ base:'calc(100vh - 69px -62px)',md:'calc(100vh - 73px - 41px)' }} >
       
-      <Container justifyContent='center' flexDirection='column' py='1rem'>
+      <Container my='auto' py='1rem'>
         <motion.div 
           initial={{ opacity: 1, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
