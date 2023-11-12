@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Box, Container, Text,Link } from '@chakra-ui/react';
 
 const Footer = () => {
@@ -12,21 +12,15 @@ const Footer = () => {
         
           <Text >Pablo Rito - {(new Date().getFullYear())}</Text>
           <Box display='flex' gap='.5rem'>
-            <Link>
-              <FontAwesomeIcon icon={faTwitter} size='xl' color='#55acee'/>
+            <Link _hover={{ opacity: 0.5 }}>
+              <FontAwesomeIcon icon={faTwitter} size='xl' color='#55acee' />
             </Link>
-            <Link>
+            <Link _hover={{ opacity: 0.5 }}>
               <FontAwesomeIcon icon={faWhatsapp} size='xl' color='#4dc247'/>
-            </Link>
-            <Link>
-              <FontAwesomeIcon icon={faLinkedin} size='xl' color='#007bb5'/>
             </Link>
           </Box>
 
         </Container>
-
-        
-
       </Box>
     </>
   )
