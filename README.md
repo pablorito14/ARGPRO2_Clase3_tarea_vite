@@ -4,7 +4,7 @@
 Web de visualización de producto de una tienda
 
 ## Demo
-![demo-react-vite-desktop](https://i.imgur.com/0zHc3fL.jpg)
+![demo-react-vite-desktop](https://i.imgur.com/f4BMmEs.jpg)
 #### [Link demo](https://pablorito14.github.io/ARGPRO2_Clase3_tarea_vite/) 
 
 ## Recursos
