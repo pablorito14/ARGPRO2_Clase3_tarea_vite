@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './Main.css';
-import { Box,Button, Container } from '@chakra-ui/react';
+import { Box, Container } from '@chakra-ui/react';
 import { ProdCard } from '../ProdCard/ProdCard';
+import { motion } from 'framer-motion';
 
-const Main = ({products}) => {
+const Main = () => {
   const productos = [
     {
       id:1,
@@ -21,17 +22,14 @@ const Main = ({products}) => {
       nombreCorto: 'Samsung 50" QLED',
       descripcion: 'Televisor gaming Smart, Neo QLED con pantalla de 50", UHD 4K (3840x2160) Formato de pantalla wide. Tasa de refresco 144 Hz (VRR). Procesador Neo Quantum 4K. Mil millones de colores. PQI (indice de calidad de la imagen) 4500. Quantum HDR 24x. HLG. Contraste: Tecnologia de Microiluminacion Ultrafina, Volumen de color al 100 % con Quantum Dot. Deteccion de brillo y color. Atenuacion UHD definitiva. Motion Xcelerator Turbo Pro. LED Clear Motion. Reduccion de ruido. Calibracion experta. Modo cineasta (FMM). Audio Dolby Digital Plus MS12 2ch. Potencia 40W (RMS). Amplificador de voz activo. Sonido 3D OTS Lite. Woofer. Enlace para habitaciones multiples. Audio bluetooth. Soporte de audio doble (Bluetooth). Sistema operativo Tizen. Interaccion de voz de campo lejano. Pantalla multiple (hasta 2 pantallas). Soporte de camara movil. Reproductor de video 360. Bluetooth 5.2. Wi Fi 5. Game Motion Plus. FreeSync Premium Pro. HGiG. Conectividad: 4 HDMI . 2 USB. Internet (LAN). Salida de audio deigital (optica). Entrada RF (entrada terrestre/por cable/por satelite) 1/0/0. eARC. Control remoto inteligente de Samsung (no lleva pilas, se carga por luz solar/ambiente).',
       precio: 678299,
-      sku: 'E8OTSZ1LL',
+      sku: 'E8OTAA22',
       stock: 0,
       img: 'https://medias.musimundo.com/medias/00602004-147028-147028-01-147028-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w0NTkyMXxpbWFnZS9qcGVnfGgxZC9oMjUvMTA0NTg1NDYxNDMyNjIvMDA2MDIwMDQtMTQ3MDI4LTE0NzAyOF8wMS0xNDcwMjhfMDEuanBnX3NpemU1MTV8ZjhmYzgyZGEwYzg3MzJkNGJiMmRkNzYwNjZjNGQ4N2NmMDU0YTQ1ZWE0NGFhZmJmZGFiMjBlMTg1OWYwNjU2Nw'
     }  
   ]
   
-  const [prod,setProd] = useState(0);
-  const cambiarProducto = (indice) => {
-    setProd(indice);
-  }
-  const producto = productos[prod];
+  const producto = productos[0]; // mensaje de ultimas unidades
+  // const producto = productos[1]; // stock no disponible (boton deshabilitado, precio en color mas oscuro)
   const { nombre,descripcion,precio, sku, stock, img } = producto;
 
   return (
@@ -40,14 +38,15 @@ const Main = ({products}) => {
           bgPosition='50% 50%' bgRepeat='no-repeat' backgroundSize='cover'
           display='flex' alignItems='center' flexDirection='column' 
           minH={{ base:'calc(100vh - 69px -62px)',md:'calc(100vh - 73px - 41px)' }} >
-      <Box mt='1.5rem' display='flex' gap="2rem">
-        {productos.map((prod,i) => <Button colorScheme='gray' key={prod.id} onClick={() => cambiarProducto(i)}>Stock: {prod.stock}</Button>)}
-      </Box>
-
-        <Container justifyContent='center' flexDirection='column' py='1rem'>
-            <ProdCard nombre={nombre} descripcion={descripcion} precio={precio} sku={sku} stock={stock} img={img}/>
-        </Container>
-
+      
+      <Container justifyContent='center' flexDirection='column' py='1rem'>
+        <motion.div 
+          initial={{ opacity: 1, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}>
+          <ProdCard nombre={nombre} descripcion={descripcion} precio={precio} sku={sku} stock={stock} img={img}/>
+        </motion.div>
+      </Container>
     </Box>
     </>
   )

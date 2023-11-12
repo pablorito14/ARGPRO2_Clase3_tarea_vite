@@ -1,6 +1,8 @@
 import React from 'react';
 import './ProdCard.css';
 import { Box,Button, Card, CardBody, CardFooter, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+
 
 const Stock = ({stock}) => {
   if(stock === 0) { 
@@ -8,7 +10,12 @@ const Stock = ({stock}) => {
   }
 
   if(stock < 5) {
-    return  (<Text fontWeight='700' fontSize='lg' color='red.400'>¡Ultimas {stock} unidades!</Text>)
+    return  (
+      <motion.div transition={{ duration: 2,yoyo: Infinity,repeat: Infinity }}
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} >
+        <Text fontWeight='700' fontSize='lg' color='red.400'>¡Ultimas {stock} unidades!</Text>
+      </motion.div>
+    ) 
   }
 
   return (<Text fontWeight='700' fontSize='lg' >{stock} unidades disponibles</Text>)

@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { Button, Drawer, DrawerBody, DrawerOverlay, DrawerContent,
   useDisclosure, Box, Container, Link, Heading } from '@chakra-ui/react'
-
 const NavLinks = () => {
   return (
     <>
@@ -32,8 +31,9 @@ const Header = () => {
               <FontAwesomeIcon icon={faCartShopping} size='lg' /> 
             </Link>
             
-            <Button _hover={{color:'whitesmoke'}} display={{md:'none'}}  _active={{bg:'#212529'}}
-                    borderColor='#ffffff20' color='#ffffff8c' variant='outline' onClick={onOpen}>
+            
+            <Button _hover={{color:'whitesmoke'}} display={{md:'none'}}  _active={{bg:'#212529'}} _focusVisible={{bg:'#212529'}}
+                    borderColor='#ffffff20' color='#ffffff' variant='outline' onClick={onOpen}>
               <FontAwesomeIcon icon={faBars} size='2xl' />
             </Button>
           </Box>

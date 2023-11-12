@@ -51,9 +51,9 @@ const Link = defineStyleConfig({
        fontFamily:'russo-one'
     },
     'navLinks':{
-      color: '#ffffff8c',
-       _hover: {color:'#ffffff'},
-       _focusVisible: {bg:'#212529'}
+      color: '#ffffff',
+       _hover: {color:'#ffffff8c'},
+       
     },
     default:{
       color: 'blue',
